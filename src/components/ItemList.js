@@ -1,8 +1,17 @@
 import LineItem from './LineItem';
 
-const ItemList = () => {
+const ItemList = ({items, deleteItem, addItemToCart}) => {
     return(
-        <ul>All items</ul>
+        <ul className='container'>
+            {
+                items.map((item) => {
+                    return <LineItem item={item}
+                                     deleteItem={deleteItem}
+                                     addItemToCart={addItemToCart} 
+                                     key={item.id} />
+                })
+            }
+        </ul>
     )
 }
 

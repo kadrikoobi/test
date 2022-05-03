@@ -1,6 +1,12 @@
-const LineItem = () => {
+const LineItem = ({item, deleteItem, addItemToCart}) => {
     return(
-        <li>One item</li>
+        <li className="item">
+           <div>
+               <img src={item.image} />
+               <h4>{item.name}</h4>
+               <p>{item.price}</p>
+           </div> 
+        </li>
     )
 }
 

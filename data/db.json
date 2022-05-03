@@ -1,16 +1,3 @@
 {
-    "items": [
-        {
-            "id": 1,
-            "name": "pen",
-            "image": "",
-            "price": 1
-        },
-        {
-            "id": 2,
-            "name": "book",
-            "image": "",
-            "price": 12
-        }
-    ]
+    "items": []
 }
