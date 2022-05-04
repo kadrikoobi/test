@@ -6,7 +6,7 @@ const LineItem = ({item, deleteItem, addItemToCart}) => {
            <div>
                <img src={item.image} />
                <h4>{item.name}</h4>
-               <p>{item.price}</p>
+               <p>{item.price}€</p>
                <button onClick={() => addItemToCart(item.id)}>Add to cart</button>
                <FaTrashAlt onClick={() => deleteItem(item.id)}
                            role="button"
