@@ -7,7 +7,7 @@ const Content = ({items, deleteItem, addItemToCart}) => {
                 <ItemList items={items}
                            deleteItem={deleteItem}
                            addItemToCart={addItemToCart} />
-            ) : (<p>No Products to display</p>)
+            ) : (<p className='msg'>No Products to display</p>)
             }
         </>
     )

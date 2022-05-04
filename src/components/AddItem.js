@@ -1,11 +1,12 @@
 import apiRequest from './../apiRequest';
 import {useForm} from 'react-hook-form';
-import {useRef} from 'react';
+import {useRef, useState} from 'react';
 
 
 const AddItem = ({items, setItems, api_url}) => {
     const {register, handleSubmit} = useForm();
     const inputRef = useRef();
+    const [fileUploaded, setFileUploaded] = useState(false);
 
     const onSubmit = async (data) => { 
         var uploadedFile = document.getElementById("file").files[0]; 
@@ -49,16 +50,20 @@ const AddItem = ({items, setItems, api_url}) => {
       document.getElementById("name").value = "";
       document.getElementById("price").value = "";
       document.getElementById("fileName").value = "";
+      setFileUploaded(false);
     }
 
     const getFileName =(str) => {
-        document.getElementById("fileName").value = str;
+        const el =document.getElementById("fileName");
+        el.value = str;
+        setFileUploaded(true);
+        console.log('uploaded' + fileUploaded);
     }
 
     return(
         <form className="addForm" onSubmit={handleSubmit(onSubmit)}>
-            <h2>Add product form</h2>
             <input id="fileName"
+                   style={{backgroundColor: fileUploaded ? 'rgb(232, 240, 254)' : 'Thistle'}}
                    type="text" 
                    placeholder="Product image" 
                    onClick={() => inputRef.current.click()} />

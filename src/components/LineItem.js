@@ -4,13 +4,13 @@ const LineItem = ({item, deleteItem, addItemToCart}) => {
     return(
         <li className="item">
            <div>
-               <img src={item.image} />
-               <h4>{item.name}</h4>
-               <p>{item.price}€</p>
-               <button onClick={() => addItemToCart(item.id)}>Add to cart</button>
                <FaTrashAlt onClick={() => deleteItem(item.id)}
                            role="button"
-                           aria-label={`Delete ${item.name}`} />
+                           aria-label={`Delete ${item.name}`} />               
+               <img src={item.image} />
+               <p className='productName'>{item.name}</p>
+               <p>{item.price}</p>
+               <button onClick={() => addItemToCart(item.id)}>Add to cart</button>
            </div> 
         </li>
     )

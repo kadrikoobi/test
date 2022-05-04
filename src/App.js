@@ -12,7 +12,7 @@ function App() {
   const [items, setItems] = useState([]);
   const [cart, setCart] = useState([]);
   const [fetchError, setFetchError] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchItems = async () => {
@@ -24,6 +24,8 @@ function App() {
         setItems(listItems);
       } catch (err) {
         console.log(err.message);
+      } finally {
+        setIsLoading(false);
       }
     }
     (async () => await fetchItems())();
@@ -48,15 +50,25 @@ function App() {
 
   return (
     <div className="App">
-      <AddItem items={items}
-               setItems={setItems} 
-               api_url={API_URL} />
-      <ShoppingCart cart={cart} 
-                    setCart={setCart} />
+      <section>
+      <div></div>
+      <div><h2>Add product form</h2></div>
+      <div><p className='cartNum'>Products in cart: {cart.length}</p></div>
+      </section>
+      <section>
+        <div></div>
+        <AddItem items={items}
+                 setItems={setItems} 
+                 api_url={API_URL} />
+        <ShoppingCart cart={cart} 
+                      setCart={setCart} />
+      </section>
+      
       <main>
+        {isLoading && <p  className='msg'>Loading items ...</p>}
         {fetchError && 
-        <p style={{color: 'red'}}>{`Error: ${fetchError}`}</p>}
-        {!fetchError && 
+        <p  className='msg' style={{color: 'red'}}>{`Error: ${fetchError}`}</p>}
+        {!fetchError && !isLoading &&
         <Content items={items}
                  deleteItem={deleteItem} 
                  addItemToCart={addItemToCart} />}
