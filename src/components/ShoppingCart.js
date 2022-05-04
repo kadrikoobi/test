@@ -1,6 +1,6 @@
-const ShoppingCart = () => {
+const ShoppingCart = ({cart,setCart}) => {
     return(
-        <p>Shopping cart</p>
+        <div className="shoppingCart">Products in cart: {cart.length}</div>
     )
 }
 
