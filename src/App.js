@@ -1,8 +1,8 @@
 import AddItem from './components/AddItem';
 import ShoppingCart from './components/ShoppingCart';
 import Content from './components/Content';
-import {useEffect, useState} from 'react';
 import apiRequest from './apiRequest';
+import {useEffect, useState} from 'react';
 import './index.css';
 
 
