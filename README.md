@@ -1,6 +1,6 @@
-# Proovitöö
+# ProovitÃ¶Ã¶
 
-It displays a form to add products, a grid of products and shopping cart to display a number of items in shopping list.
+It displays a form to add products, a grid of products and shopping cart to display a number of items in shopping list.Products can be added, deleted or pick them up to shopping cart.
 
 ## Installation
 
