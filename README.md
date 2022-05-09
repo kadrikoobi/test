@@ -4,7 +4,7 @@ It displays a form to add products, a grid of products and shopping cart to disp
 
 ## Installation
 
-Use 'npm start' to run app and 'npx json-server -p 2500 -w data/db.json' to run json-server. If you don't have json-server saved in your computer use 'npx i json-server'.
+Use 'npm start' to run app and 'npx json-server -p 3500 -w data/db.json' to run json-server. If you don't have json-server saved in your computer use 'npx i json-server'.
 
 ## Final word
 
